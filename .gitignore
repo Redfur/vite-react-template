@@ -6,9 +6,18 @@ logs
 **/*.back.*
 
 node_modules
-bower_components
+dist
+dist-ssr
+*.local
 
-*.sublime*
+### Logs ###
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 psd
 thumb
@@ -21,6 +30,13 @@ sketch
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Local History for Visual Studio Code
 .history/

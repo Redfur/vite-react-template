@@ -1,9 +1,15 @@
 {
-    "[javascript]": {
-        "editor.maxTokenizationLineLength": 2500,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": true
-        }
-    },
-    "editor.formatOnSave": true
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
 }
