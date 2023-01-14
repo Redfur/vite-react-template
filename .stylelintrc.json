@@ -1,0 +1,32 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-prettier/recommended", "stylelint-config-prettier"],
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "block-no-empty": [
+      true,
+      {
+        "severity": "warning",
+        "disableFix": true
+      }
+    ],
+    "color-function-notation": [
+      "modern",
+      {
+        "disableFix": true
+      }
+    ],
+    "custom-property-pattern": [
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+      {
+        "message": "Expected custom property name to be kebab-case"
+      }
+    ],
+    "prettier/prettier": [
+      true,
+      {
+        "singleQuote": true,
+        "tabWidth": 4
+      }
+    ]
+  }
+}

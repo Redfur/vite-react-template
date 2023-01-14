@@ -9,7 +9,17 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
+  "editor.codeActionsOnSave": {
+    "source.formatDocument": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.sortImports": true
+  }
 }
