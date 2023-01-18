@@ -8,6 +8,7 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:postcss-modules/recommended",
     "plugin:import/typescript",
     "plugin:react/jsx-runtime",
     "plugin:prettier/recommended",
@@ -22,7 +23,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "jsx-a11y", "react-hooks", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "postcss-modules", "import", "jsx-a11y", "react-hooks", "prettier"],
   "settings": {
     "react": {
       "version": "detect"
@@ -30,11 +31,24 @@
     "import/resolver": {
       "typescript": {},
       "node": {}
+    },
+    "postcss-modules": {
+      "include": "src/**/.m.css",
+      "exclude": "node_modules/**/*"
     }
   },
   "rules": {
     "no-console": "warn",
     "no-var": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "react/prop-types": "off",
+    "postcss-modules/no-undef-class": "error",
+    "postcss-modules/no-unused-class": "error",
     "prettier/prettier": [
       "error",
       {

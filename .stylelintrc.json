@@ -5,8 +5,8 @@
     "block-no-empty": [
       true,
       {
-        "severity": "warning",
-        "disableFix": true
+        "disableFix": true,
+        "severity": "warning"
       }
     ],
     "color-function-notation": [
