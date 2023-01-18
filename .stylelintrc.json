@@ -9,12 +9,9 @@
         "severity": "warning"
       }
     ],
-    "color-function-notation": [
-      "modern",
-      {
-        "disableFix": true
-      }
-    ],
+    "selector-class-pattern": null,
+    "hue-degree-notation": null,
+    "color-function-notation": null,
     "custom-property-pattern": [
       "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
       {
