@@ -1,3 +1,5 @@
+@import url('/src/styles/packages.css');
+
 :root {
     /* fix 100vh on ios/android */
     --vh100: calc(100 * var(--vh, 1vh));
@@ -25,6 +27,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 a {

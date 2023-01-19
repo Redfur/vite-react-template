@@ -12,8 +12,6 @@
   "scss.validate": false,
   "css.validate": false,
   "less.validate": false,
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false,
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {

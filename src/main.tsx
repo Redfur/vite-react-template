@@ -1,5 +1,5 @@
 import { DefaultLayoutFallback } from 'layouts/default'
-import React, { lazy, Suspense } from 'react'
+import React, { lazy } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './styles/index.css'

@@ -20,6 +20,12 @@ const ButtonExample = () => (
             <Button content="danger" variant="danger" />
         </div>
         <div>
+            <p>sizes</p>
+            <Button size="small" content="small" />
+            <Button size="medium" content="medium" />
+            <Button size="large" content="large" />
+        </div>
+        <div>
             <p>button group</p>
             <ButtonGroup>
                 <Button content="first" />
