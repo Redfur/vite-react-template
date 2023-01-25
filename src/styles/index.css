@@ -12,7 +12,7 @@
 
     /*  page bg color  */
     --bg-hue: 225;
-    --page-bg: hsla(var(--bg-hue), 10%, 100%, 100%); /* light */
+    --page-bg: hsla(var(--bg-hue), 10%, 95%, 100%); /* light */
     --page-color: hsla(var(--bg-hue), 10%, 20%, 100%); /* dark */
 
     font-family: sans-serif;
@@ -20,13 +20,24 @@
     line-height: 1.5rem;
     font-weight: 400;
     color-scheme: light dark;
-    color: var(--page-color);
-    background-color: var(--page-bg);
     font-synthesis: none;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: var(--vh100);
+    color: var(--page-color);
+    background-color: var(--page-bg);
+}
+
+body.dark {
+    --page-bg: hsla(var(--bg-hue), 10%, 20%, 100%); /* dark */
+    --page-color: hsla(var(--bg-hue), 10%, 95%, 100%); /* light */
 }
 
 *,
@@ -43,17 +54,4 @@ a {
 a:hover {
     color: var(--color-lighter);
     text-decoration: underline;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: var(--vh100);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --page-bg: hsla(var(--bg-hue), 10%, 20%, 100%); /* dark */
-        --page-color: hsla(var(--bg-hue), 10%, 100%, 100%); /* light */
-    }
 }

@@ -9,6 +9,12 @@
         "severity": "warning"
       }
     ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
     "selector-class-pattern": null,
     "hue-degree-notation": null,
     "color-function-notation": null,

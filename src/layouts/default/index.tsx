@@ -1,8 +1,9 @@
+import { ThemeToggleButton } from 'contexts/themeContext'
 import css from 'layouts/default/DefaultLayout.module.css'
 import { Suspense } from 'react'
 import { Helmet } from 'react-helmet'
 import Skeleton from 'react-loading-skeleton'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 const DefaultLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
     return (
@@ -10,8 +11,12 @@ const DefaultLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
             <div className={css.header}>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/examples">Examples</NavLink>
+                <ThemeToggleButton />
             </div>
-            <div className={css.content}>{children}</div>
+            <div className={css.content}>
+                {children}
+                <Outlet />
+            </div>
         </div>
     )
 }
