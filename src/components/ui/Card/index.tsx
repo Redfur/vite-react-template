@@ -1,20 +1,61 @@
-import { mdiChevronDown } from '@mdi/js'
+import { mdiChevronDown, mdiLink } from '@mdi/js'
 import clsx from 'clsx'
 import { ThemeContext } from 'contexts/themeContext'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { forwardRef, useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Icon from '../Icon'
 import css from './Card.module.css'
+
+type CardLinkProps = {
+    href: string
+    external?: boolean
+    text: string
+}
 
 type CardProps = {
     title: string
     defaultOpen?: boolean
     className?: string
-    children?: JSX.Element | string
+    description?: string
+    image?: string
+    link?: CardLinkProps
+}
+
+type CardImageProps = {
+    src: string
+    alt?: string
+}
+
+export const CardImage: React.FC<CardImageProps & React.HTMLProps<HTMLImageElement>> = (props) => {
+    const { src, alt } = props
+    return (
+        <div className={css.image}>
+            <img src={src} alt={alt} />
+        </div>
+    )
+}
+
+export const CardDescription: React.FC<{ text: string }> = ({ text }) => {
+    return <div className={css.description}>{text}</div>
+}
+
+export const CardLink: React.FC<CardLinkProps> = ({ external, href, text }) => {
+    return external ? (
+        <a target="_blank" href={href} rel="noreferrer" className={css.link}>
+            <Icon path={mdiLink} className={css.linkIcon} />
+            {text}
+        </a>
+    ) : (
+        <Link to={href} className={css.link}>
+            <Icon path={mdiLink} className={css.linkIcon} />
+            {text}
+        </Link>
+    )
 }
 
 const Card: React.ForwardRefRenderFunction<HTMLDivElement, CardProps> = (props, ref) => {
-    const { defaultOpen, title, className, children } = props
+    const { defaultOpen, title, className, image, description, link } = props
     const { theme } = useContext(ThemeContext)
     const [open, setOpen] = useState(defaultOpen)
     return (
@@ -24,6 +65,7 @@ const Card: React.ForwardRefRenderFunction<HTMLDivElement, CardProps> = (props, 
                 css.root,
                 {
                     [css.root_dark]: theme === 'dark',
+                    [css.root_open]: open,
                 },
                 className
             )}
@@ -55,7 +97,11 @@ const Card: React.ForwardRefRenderFunction<HTMLDivElement, CardProps> = (props, 
                         }}
                         className={css.body}
                     >
-                        <div className={css.content}>{children}</div>
+                        <div className={css.content}>
+                            {image ? <CardImage src={image} /> : null}
+                            {description ? <CardDescription text={description} /> : null}
+                            {link ? <CardLink href={link.href} text={link.text} external={link.external} /> : null}
+                        </div>
                     </motion.div>
                 ) : null}
             </AnimatePresence>

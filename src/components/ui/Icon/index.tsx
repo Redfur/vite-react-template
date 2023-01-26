@@ -8,8 +8,8 @@ type IconProps = MdiIconProps
 const Icon: React.FC<IconProps> = (props) => {
     const { path, className, ...rest } = props
     return (
-        <span className={clsx(css.root)}>
-            <MdiIcon path={path} className={clsx(css.svg, className)} {...rest} />
+        <span className={clsx(css.root, className)}>
+            <MdiIcon path={path} className={clsx(css.svg)} {...rest} />
         </span>
     )
 }

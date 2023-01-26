@@ -1,7 +1,12 @@
 @import url('/node_modules/react-loading-skeleton/dist/skeleton.css');
 
 /* react-loading-skeleton */
+.react-loading-skeleton {
+    --base-color: hsla(var(--bg-hue), 10%, 80%, 100%);
+    --highlight-color: hsla(var(--bg-hue), 10%, 90%, 100%);
+}
+
 body.dark .react-loading-skeleton {
     --base-color: hsla(var(--bg-hue), 10%, 25%, 100%);
-    --highlight-color: hsla(var(--bg-hue), 10%, 30%, 100%);
+    --highlight-color: hsla(var(--bg-hue), 10%, 35%, 100%);
 }
